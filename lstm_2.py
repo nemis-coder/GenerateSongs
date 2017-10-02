@@ -110,7 +110,7 @@ class SLSTM:
     self.sess.run(tf.global_variables_initializer())
     # writers for TensorBorad
     timestamp = datetime.datetime.now().strftime("%y%m%d%H%M%S")
-    model_name  = 'graphs/10_lstm_{}'.format(timestamp)
+    model_name  = 'graphs_2/10_lstm_{}'.format(timestamp)
     train_writer = tf.summary.FileWriter(model_name)
     train_writer.add_graph(self.sess.graph)
     # lstm state
@@ -147,7 +147,7 @@ class SLSTM:
       train_writer.add_summary(summary, i)
       msg = "{:5d}. loss: {:6.4f}"
       msg = msg.format(i, loss)
-      print ("Im here")
+      #print ("Im here")
       print(msg)
 
   def run_step(self, x, reset_state=False):
@@ -202,7 +202,7 @@ def run():
   lstm_depth  = 3
   batch_size  = 200
   seq_size    = 32
-  train_iters = 100
+  train_iters = 4500
 
   text_seed = "necesidad"
   composition_size = 500
