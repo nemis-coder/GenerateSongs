@@ -194,17 +194,17 @@ class DatatReader():
 
 def run():
 
-  path = 'corpus_jms.txt'#'shakespeare.txt'
+  path = 'python_corpus.txt'#'corpus_jms.txt'#'shakespeare.txt'
   data = DatatReader(path)
 
   alpha_size  = len(data.alpha)
   lstm_size   = alpha_size * 2
   lstm_depth  = 3
-  batch_size  = 64
+  batch_size  = 100
   seq_size    = 32
-  train_iters = 100
+  train_iters = 2500
 
-  text_seed = "necesidad"
+  text_seed = "for"
   composition_size = 500
 
   with tf.Session() as sess:
